@@ -36,7 +36,6 @@
 #include <string.h>
 #include <inttypes.h>
 #include "project.h"
-//#include <CyLib.h>
 
 
 //extern "C" void __cxa_pure_virtual() { while (1); }
@@ -65,19 +64,8 @@ void _i2c_write(uint8_t data)
 
 void pulseEnable (uint8_t data)
 {
-//    if(I2C_MasterSendStart(_Addr, 0))
-//    {
-//        I2C_MasterWriteByte(data | _En); // En HIGH
-//        CyDelayUs(5000);
-//        I2C_MasterWriteByte(data & ~_En); //En LOW
-//        I2C_MasterSendStop();
-//    }
    _i2c_write (data | _En);   // En HIGH
-    //CyDelay(100);
    _i2c_write (data & ~_En);  // En LOW
-//    _i2c_write(data);
-    //CyDelay(100);
-//    _i2c_write(0);
 }
 
     /*!
@@ -550,7 +538,6 @@ void LCD_writeString(char* string)
         while(*c)
         {
             LCD_write(*c++);
-            //CyDelay(500);
         }
     }
 }

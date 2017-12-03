@@ -37,8 +37,6 @@
 #ifndef _LCD_H_
 #define _LCD_H_
 
-#define I2C_device_name_ I2C_Master_
-
 #define I2C_MasterCommand(command) I2C_Master_ ## command
     
 #define I2C_MasterSendStart(addr, write) I2C_MasterCommand(MasterSendStart)(addr,write)
@@ -47,8 +45,6 @@
     
 #include <inttypes.h>
 #include <stddef.h>
-
-//#include <Print.h>
 
 
 /*!
